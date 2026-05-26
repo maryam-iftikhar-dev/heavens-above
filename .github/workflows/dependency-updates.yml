@@ -32,7 +32,7 @@ jobs:
 
       - name: Setup Node.js (if package.json exists)
         if: steps.check-package.outputs.has_package == 'true'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 18
 
@@ -141,7 +141,7 @@ jobs:
 
       - name: Setup Node.js (for Node projects)
         if: steps.check-type.outputs.project_type == 'node'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 18
 
