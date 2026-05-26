@@ -291,7 +291,7 @@ jobs:
           echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Comment on PR
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const comment = `${{ steps.analyze.outputs.comment }}
@@ -313,7 +313,7 @@ jobs:
             });
 
       - name: Label PR based on update type
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const updateType = '${{ steps.analyze.outputs.update_type }}';
@@ -366,7 +366,7 @@ jobs:
         run: sleep 10
 
       - name: Auto-approve PR
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             await github.rest.pulls.createReview({
@@ -385,7 +385,7 @@ jobs:
 
       - name: Merge PR (fallback)
         if: failure()
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             try {
