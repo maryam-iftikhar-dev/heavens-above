@@ -31,7 +31,7 @@ jobs:
           echo "Maintenance run at $(date)" >> logs/maintenance.log
 
       - name: Upload logs as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: maintenance-logs
           path: logs/maintenance.log
